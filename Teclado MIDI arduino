@@ -4,7 +4,7 @@
 
 // El número de filas (rows) y columnas (cols) debe coincidir con
 
-// las que hayas determinado en tu teclado -Mecuba
+// las que hayas determinado en tu teclado -Herbie 
 
 #define NUM_ROWS 8
 
@@ -120,7 +120,7 @@ void setup()
 
 
 
-// Esta sección también fue modificada respecto al código original:
+
 
 // en el primer 'for' se iteraba colCtr, pero lo intercambiamos porque
 
@@ -132,7 +132,7 @@ void setup()
 
 // similar, entonces regrésalo comoe estaba, en el primer 'for' se itera
 
-// colCtr y, en el 'for' anidado, se itera rowCtr. -Mecuba
+// colCtr y, en el 'for' anidado, se itera rowCtr. -Herbie 
 
 
 
