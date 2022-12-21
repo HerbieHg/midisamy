@@ -1,0 +1,80 @@
+int PIEZO = 11;
+  int LED = 13;
+  
+  int BUTTON_C = 2;
+  int BUTTON_D = 3;
+  int BUTTON_E = 4;
+  int BUTTON_F = 5;
+  int BUTTON_G = 6;
+  int BUTTON_A = 7;
+  int BUTTON_B = 8;
+  int BUTTON_C2 = 9;
+  
+  
+  void setup()
+  {
+    for(int i = 2; i<=10;i++)
+    {
+      pinMode(i, INPUT_PULLUP);
+    }
+    
+    pinMode(LED, OUTPUT);      
+  }
+  
+  
+  
+  
+  
+  void loop()
+  {
+     while(digitalRead(BUTTON_C) == LOW)
+    {
+      tone(PIEZO, 262, 100);
+      digitalWrite(LED,HIGH);
+    }
+    while(digitalRead(BUTTON_D) == LOW)
+    {
+      tone(PIEZO, 294, 100);
+      digitalWrite(LED,HIGH);
+    }
+  
+    while(digitalRead(BUTTON_E) == LOW)
+    {
+      tone(PIEZO, 330, 100);
+      digitalWrite(LED,HIGH);
+    }
+    
+    while(digitalRead(BUTTON_F) == LOW)
+    {
+      tone(PIEZO, 349, 100);
+      digitalWrite(LED,HIGH);
+    }
+  
+    while(digitalRead(BUTTON_G) == LOW)
+    {
+      tone(PIEZO, 392, 100);
+      digitalWrite(LED,HIGH);
+    }
+  
+    while(digitalRead(BUTTON_A) == LOW)
+    {
+      tone(PIEZO, 440, 100);
+      digitalWrite(LED,HIGH);
+    }
+  
+    while(digitalRead(BUTTON_B) == LOW)
+    {
+      tone(PIEZO, 494, 100);
+      digitalWrite(LED,HIGH);
+    }      
+  
+    while(digitalRead(BUTTON_C2) == LOW)
+    {
+      tone(PIEZO, 523, 100);
+      digitalWrite(LED,HIGH);
+    }
+  
+    noTone(PIEZO);
+    digitalWrite(LED,LOW);
+  
+  }
