@@ -1,0 +1,139 @@
+int escala = 2;
+
+
+
+
+
+int c[5]={131,262,523,1046,2093};       // frecuencias 4 octavas de Do
+
+int cs[5]={139,277,554,1108,2217};      // Do#
+
+int d[5]={147,294,587,1175,2349};       // Re
+
+int ds[5]={156,311,622,1244,2489};    // Re#
+
+int e[5]={165,330,659,1319,2637};      // Mi
+
+int f[5]={175,349,698,1397,2794};       // Fa
+
+int fs[5]={185,370,740,1480,2960};     // Fa#
+
+int g[5]={196,392,784,1568,3136};     // Sol
+
+int gs[5]={208,415,831,1661,3322};   // Sol#
+
+int a[5]={220,440,880,1760,3520};      // La
+
+int as[5]={233,466,932,1866,3729};    // La#
+
+int b[5]={247,494,988,1976,3951};      // Si
+
+
+void setup() {
+
+  for ( int i = 2; i< 5; i ++){
+
+    pinMode(i, OUTPUT); //para los LEDs
+
+    pinMode(i+6, INPUT);  //para los botones
+
+  }
+
+  pinMode(7, OUTPUT);
+
+  digitalWrite(6-escala, HIGH);
+
+  Serial.begin(9600);
+
+}
+
+
+
+void loop() {
+
+  if (digitalRead(10) == HIGH){
+
+    cambiarEscala(2);  //Octava 3
+
+  }
+
+  else if (digitalRead(9) == HIGH){
+
+    cambiarEscala(3);    //Octava 4
+
+  }
+
+   else if (digitalRead(8) == HIGH){
+
+    cambiarEscala(4);    //Octava 5
+
+  }
+
+  int ValorTeclaPulsada = analogRead(A0);
+
+  Serial.println(ValorTeclaPulsada);
+
+  if(ValorTeclaPulsada >980 && ValorTeclaPulsada<1035){
+
+    tone(7, c[escala]); //Do
+
+  }
+
+  else if(ValorTeclaPulsada >920 && ValorTeclaPulsada<960){
+
+    tone(7, d[escala]);  //Re
+
+  }
+
+  else if(ValorTeclaPulsada >665 && ValorTeclaPulsada<725){
+
+    tone(7, e[escala]);  //Mi
+
+  }
+
+  else if(ValorTeclaPulsada >500 && ValorTeclaPulsada<565){
+
+    tone(7, f[escala]);  //Fa
+
+  }
+
+  else if(ValorTeclaPulsada >300 && ValorTeclaPulsada<350){
+
+    tone(7, g[escala]);  //Sol
+
+  }
+
+  else if(ValorTeclaPulsada >220 && ValorTeclaPulsada<280){
+
+    tone(7, a[escala]);  //La
+
+  }
+
+  else if(ValorTeclaPulsada >75 && ValorTeclaPulsada<125){
+
+    tone(7, b[escala]);  //Si
+
+  }
+
+  else{
+
+    noTone(7);
+
+  }
+
+}
+
+
+void cambiarEscala (int e) {
+
+  escala = e;
+
+  for (int i = 2; i<5;i++){
+
+    digitalWrite(i, LOW);
+
+  }
+
+  digitalWrite(6-escala, HIGH);
+
+}
