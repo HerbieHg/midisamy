@@ -1,0 +1,56 @@
+const int buttonPin1 = 2; // Pin para el botón 1
+const int buttonPin2 = 3; // Pin para el botón 2
+const int buttonPin3 = 4; // Pin para el botón 3
+const int buttonPin4 = 5; // Pin para el botón 4
+const int buttonPin5 = 6; // Pin para el botón 5
+const int buttonPin6 = 7; // Pin para el botón 6
+const int buttonPin7 = 8; // Pin para el botón 7
+const int buttonPin8 = 9; // Pin para el botón 8
+const int buttonPin9 = 10; // Pin para el botón 9
+const int buttonPin10 = 11; // Pin para el botón 10
+const int buttonPin11 = 12; // Pin para el botón 11
+const int buttonPin12 = 13; // Pin para el botón 12
+
+const int note1 = 60; // Nota MIDI para el botón 1
+const int note2 = 61; // Nota MIDI para el botón 2
+const int note3 = 62; // Nota MIDI para el botón 3
+const int note4 = 63; // Nota MIDI para el botón 4
+const int note5 = 64; // Nota MIDI para el botón 5
+const int note6 = 65; // Nota MIDI para el botón 6
+const int note7 = 66; // Nota MIDI para el botón 7
+const int note8 = 67; // Nota MIDI para el botón 8
+const int note9 = 68; // Nota MIDI para el botón 9
+const int note10 = 69; // Nota MIDI para el botón 10
+const int note11 = 70; // Nota MIDI para el botón 11
+const int note12 = 71; // Nota MIDI para el botón 12
+
+void setup() {
+  pinMode(buttonPin1, INPUT);
+  pinMode(buttonPin2, INPUT);
+  pinMode(buttonPin3, INPUT);
+  pinMode(buttonPin4, INPUT);
+  pinMode(buttonPin5, INPUT);
+  pinMode(buttonPin6, INPUT);
+  pinMode(buttonPin7, INPUT);
+  pinMode(buttonPin8, INPUT);
+  pinMode(buttonPin9, INPUT);
+  pinMode(buttonPin10, INPUT);
+  pinMode(buttonPin11, INPUT);
+  pinMode(buttonPin12, INPUT);
+  Serial.begin(31250);
+}
+
+void loop() {
+  // Leer el estado de cada botón
+  int buttonState1 = digitalRead(buttonPin1);
+  int buttonState2 = digitalRead(buttonPin2);
+  int buttonState3 = digitalRead(buttonPin3);
+  int buttonState4 = digitalRead(buttonPin4);
+  int buttonState5 = digitalRead(buttonPin5);
+  int buttonState6 = digitalRead(buttonPin6);
+  int buttonState7 = digitalRead(buttonPin7);
+  int buttonState8 = digitalRead(buttonPin8);
+  int buttonState9 = digitalRead(buttonPin9);
+  int buttonState10 = digitalRead(buttonPin10);
+  int buttonState11 = digitalRead(buttonPin11);
+  int buttonState12 = digitalRead
